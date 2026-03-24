@@ -1,0 +1,65 @@
+{
+  "descriptions": [
+    {
+      "datatype": "anat",
+      "suffix": "T1w",
+      "criteria": {
+        "SeriesDescription": "*T1_MPRAGE*ND*"
+      },
+      "sidecar_changes": {
+        "ProtocolName": "T1"
+      }
+    },
+    {
+      "datatype": "anat",
+      "suffix": "T2w",
+      "criteria": {
+        "SeriesDescription": "*T2_SPACE*ND*"
+      },
+      "sidecar_changes": {
+        "ProtocolName": "T2"
+      }
+    },
+    {
+      "id": "id_task_rest",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": "task-rest",
+      "criteria": {
+        "SeriesDescription": "*ep2d*bold*"
+      },
+      "sidecar_changes": {
+        "TaskName": "REST"
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "magnitude1",
+      "IntendedFor": "id_task_rest",
+      "criteria": {
+        "SeriesDescription": "*field_mapping*ND*",
+        "ImageType": ["ORIGINAL", "PRIMARY", "M", "NONE", "MAGNITUDE"],
+        "EchoNumber": 1
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "magnitude2",
+      "IntendedFor": "id_task_rest",
+      "criteria": {
+        "SeriesDescription": "*field_mapping*ND*",
+        "ImageType": ["ORIGINAL", "PRIMARY", "M", "NONE", "MAGNITUDE"],
+        "EchoNumber": 2
+      }
+    },
+    {
+      "datatype": "fmap",
+      "suffix": "phasediff",
+      "IntendedFor": "id_task_rest",
+      "criteria": {
+        "SeriesDescription": "*field_mapping*ND*",
+        "ImageType": ["ORIGINAL", "PRIMARY", "P", "NONE", "PHASE"]
+      }
+    }
+  ]
+}
