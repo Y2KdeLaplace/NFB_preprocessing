@@ -7,7 +7,7 @@ SUB=$2
 DERIVATIVES_DIR="$BIDS_DIR/derivatives"
 
 # FastSurfer path
-FASTSURFER_HOME="/home/wanglab/FastSurfer" 
+FASTSURFER_HOME=$HOME/FastSurfer 
 
 T1_FILE="$BIDS_DIR/$SUB/anat/${SUB}_T1w.nii.gz"
 # ==========================================
