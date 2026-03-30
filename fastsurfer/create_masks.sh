@@ -1,4 +1,6 @@
 #!/bin/bash
+# Written by Yiheng Hu (2026.3.30)
+export FSLOUTPUTTYPE=NIFTI
 
 BIDS_DIR=$1
 SUB_ID=$2
@@ -8,7 +10,7 @@ DERIVATIVES_DIR="$BIDS_DIR/derivatives"
 OUTPUT_DIR="$DERIVATIVES_DIR/$SUB_ID/func"
 FS_MRI_DIR="$DERIVATIVES_DIR/$SUB_ID/mri"
 
-
+cd $OUTPUT_DIR
 echo ">>> Final. 生成左侧杏仁核 ROI (AMG_L.nii)..."
 # 从 FastSurfer 图谱中提取 Label 18
 mri_binarize \
