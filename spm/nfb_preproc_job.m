@@ -1,5 +1,5 @@
 %-----------------------------------------------------------------------
-% Job saved on 28-Jan-2026 13:29:22 by cfg_util (rev $Rev: 7345 $)
+% Job saved on 31-Mar-2026 11:24:45 by cfg_util (rev $Rev: 7345 $)
 % spm SPM - SPM12 (7771)
 % cfg_basicio BasicIO - Unknown
 %-----------------------------------------------------------------------
@@ -70,7 +70,7 @@ matlabbatch{6}.spm.util.imcalc.input(2) = cfg_dep('Segment: c1 Images', substruc
 matlabbatch{6}.spm.util.imcalc.input(3) = cfg_dep('Segment: c2 Images', substruct('.','val', '{}',{5}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','tiss', '()',{2}, '.','c', '()',{':'}));
 matlabbatch{6}.spm.util.imcalc.input(4) = cfg_dep('Segment: c3 Images', substruct('.','val', '{}',{5}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','tiss', '()',{3}, '.','c', '()',{':'}));
 matlabbatch{6}.spm.util.imcalc.output = 'WholeBrainMask_EPI';
-matlabbatch{6}.spm.util.imcalc.outdir = {'C:\rtfmri\spm_output'};
+matlabbatch{6}.spm.util.imcalc.outdir = {'C:\rtfmri\pyOpenNFT-setting'};
 matlabbatch{6}.spm.util.imcalc.expression = '(i2 + i3 + i4) > 0.5';
 matlabbatch{6}.spm.util.imcalc.var = struct('name', {}, 'value', {});
 matlabbatch{6}.spm.util.imcalc.options.dmtx = 0;
@@ -83,12 +83,12 @@ matlabbatch{7}.spm.spatial.smooth.dtype = 0;
 matlabbatch{7}.spm.spatial.smooth.im = 0;
 matlabbatch{7}.spm.spatial.smooth.prefix = 's';
 matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.files(1) = cfg_dep('Realign: Estimate & Reslice: Mean Image', substruct('.','val', '{}',{3}, '.','val', '{}',{1}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','rmean'));
-matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.moveto = {'C:\rtfmri\spm_output'};
+matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.moveto = {'C:\rtfmri\pyOpenNFT-setting'};
 matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.patrep.pattern = 'meanbold';
 matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.patrep.repl = 'MC_Templ';
 matlabbatch{8}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.unique = false;
 matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.files(1) = cfg_dep('Segment: Bias Corrected (1)', substruct('.','val', '{}',{5}, '.','val', '{}',{1}, '.','val', '{}',{1}), substruct('.','channel', '()',{1}, '.','biascorr', '()',{':'}));
-matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.moveto = {'C:\rtfmri\spm_output'};
+matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.moveto = {'C:\rtfmri\pyOpenNFT-setting'};
 matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.patrep.pattern = 'manat';
 matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.patrep.repl = 'T1';
 matlabbatch{9}.cfg_basicio.file_dir.file_ops.file_move.action.moveren.unique = false;

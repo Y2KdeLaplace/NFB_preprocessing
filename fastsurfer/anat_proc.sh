@@ -1,5 +1,4 @@
 #!/bin/bash
-# 1_fastsurfer_bids_conda.sh
 
 # ================= 配置区 =================
 BIDS_DIR=$1
