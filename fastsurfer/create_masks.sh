@@ -36,8 +36,4 @@ fi
 rm temp_amg_l_t1.nii.gz
 
 echo ">>> 恭喜！所有最终文件已导出至指定文件夹: $TARGET_DIR"
-<<<<<<< HEAD
 tree $TARGET_DIR
-=======
-tree $TARGET_DIR
->>>>>>> 67c4e270114fcd16d05ee81b2789982592a0844e
