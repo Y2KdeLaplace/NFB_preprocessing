@@ -115,7 +115,24 @@ else
           -interp nearestneighbour \
           -out $TARGET_DIR/WholeBrainMask_EPI.nii
 fi
+
 echo ">>>        生成参考相 (MC_Templ.nii)"
 mv last_epi.nii $TARGET_DIR/MC_Templ.nii
-echo ">>>        生成结构像 (T1.nii)"
-mv T1_brain_fs.nii $TARGET_DIR/T1.nii
+
+echo ">>>        生成结构像 (T1.nii) -> 投射到 EPI 空间并保持 1mm 分辨率"
+if [ -f "t12epi_warp.nii" ] || [ -f "t12epi_warp.nii.gz" ]; then
+    # 生成 1mm 分辨率的 dummy 参考相
+    flirt -in MC_Templ.nii -ref MC_Templ.nii -applyisoxfm 1 -init $FSLDIR/etc/flirtsch/ident.mat -out MC_Templ_1mm.nii
+    # 应用非线性 Warp 形变场
+    applywarp --ref=MC_Templ_1mm.nii \
+              --in=T1_brain_fs.nii \
+              --warp=t12epi_warp \
+              --out=$TARGET_DIR/T1.nii
+else
+    # 应用线性矩阵
+    flirt -in T1_brain_fs.nii \
+          -ref MC_Templ.nii \
+          -applyxfm -init t12epi.mat \
+          -applyisoxfm 1 \
+          -out $TARGET_DIR/T1.nii
+fi
