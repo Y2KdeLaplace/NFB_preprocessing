@@ -9,5 +9,5 @@ mv -f pyOpenNFT-setting/*.* nii_files/
 echo -n "Please input subject ID (like hyh_sub-00 or sub-00):"
 read -r subj
 today=$(date +%Y%m%d)
-mv nii_files /mnt/d/Data_RT/$today_$subj
+mv nii_files /mnt/d/Data_RT/${today}_${subj}
 mkdir nii_files
